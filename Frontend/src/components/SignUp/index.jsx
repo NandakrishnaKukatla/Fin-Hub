@@ -11,14 +11,31 @@ const SignUp = () => {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Sign Up attempt:', { fullName, email, password });
         if (password !== confirmPassword) {
             alert("Passwords do not match!");
             return;
         }
-        navigate("/login");
+
+        try {
+            const response = await fetch("http://localhost:5000/api/auth/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name: fullName, email, password }),
+            });
+
+            const data = await response.json();
+            if (response.ok && data.success) {
+                alert("Registration successful! Please login.");
+                navigate("/login");
+            } else {
+                alert(data.message || "Registration failed");
+            }
+        } catch (error) {
+            console.error("Register error:", error);
+            alert("Failed to connect to server");
+        }
     };
 
     return (
