@@ -21,6 +21,29 @@
     --border-light: #e2e8f0;
 }
 
+
+.hero-title {
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+
+    background: linear-gradient(90deg, #ffffff, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 520px;
+    line-height: 1.6;
+
+    margin-bottom: 2rem;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -588,4 +611,51 @@ h3 {
     .nav-links {
         display: none;
     }
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    /* Adjust spacing between links */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-links li a {
+    color: rgba(255, 255, 255, 0.7);
+    /* Slightly dimmed default state */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 6px;
+    transition: color 0.3s ease;
+}
+
+/* Brighten text on hover */
+.nav-links li a:hover {
+    color: #ffffff;
+}
+
+/* The invisible underline */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #ffffff;
+    /* Match your white text */
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Animate the underline to full width on hover */
+.nav-links li a:hover::after {
+    width: 100%;
 }
