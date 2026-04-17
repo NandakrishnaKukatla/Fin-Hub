@@ -1,47 +1,17 @@
-/* Color Variables - Softened Indigo Theme */
+/* =========================================
+   VARIABLES & BASE STYLES
+   ========================================= */
 :root {
     --purple-900: #2a264e;
-    /* Lifted from ink-black to a softer midnight violet */
     --purple-800: #3f3979;
-    /* Smoother transition color */
     --purple-600: #6366f1;
-    /* Friendly, modern SaaS indigo */
     --purple-400: #a5b4fc;
     --purple-100: #eef2ff;
-    /* Very gentle tint, not glaring */
-
     --text-dark: #334155;
-    /* Slate 700: Much easier on the eyes than black */
     --text-light: #64748b;
-    /* Slate 500 */
-
     --bg-white: #ffffff;
     --bg-offwhite: #f8fafc;
-    /* Cool, very subtle slate-white to reduce glare */
     --border-light: #e2e8f0;
-}
-
-
-.hero-title {
-    font-size: clamp(2.4rem, 4vw, 4rem);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-
-    background: linear-gradient(90deg, #ffffff, #a5b4fc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-    font-size: clamp(1rem, 1.5vw, 1.3rem);
-    color: rgba(255, 255, 255, 0.75);
-    max-width: 520px;
-    line-height: 1.6;
-
-    margin-bottom: 2rem;
 }
 
 * {
@@ -61,13 +31,9 @@ body {
     overflow-x: hidden;
 }
 
-.logo-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-}
-
-/* Typography */
+/* =========================================
+   TYPOGRAPHY
+   ========================================= */
 h1,
 h2,
 h3 {
@@ -75,10 +41,27 @@ h3 {
     font-weight: 700;
     letter-spacing: -0.02em;
     color: var(--purple-900);
-    /* Using soft dark purple instead of black for harmony */
 }
 
-/* Navbar */
+.hero-title {
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 520px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -100,26 +83,56 @@ h3 {
     color: var(--bg-white);
 }
 
+.logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+
 .nav-links {
     display: flex;
-    list-style: none;
     gap: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
-.nav-links a {
-    color: rgba(255, 255, 255, 0.85);
-    /* Slightly muted white */
+.nav-links li a {
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
-    font-size: 0.95rem;
     font-weight: 500;
-    transition: color 0.2s;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 6px;
+    transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-    color: var(--purple-400);
+.nav-links li a:hover {
+    color: #ffffff;
 }
 
-/* Buttons */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
 .btn-primary {
     background-color: var(--purple-600);
     color: var(--bg-white);
@@ -131,7 +144,6 @@ h3 {
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
-    /* Softer, tinted shadow */
 }
 
 .btn-primary:hover {
@@ -156,9 +168,10 @@ h3 {
     background-color: var(--purple-100);
 }
 
-/* Hero Section */
+/* =========================================
+   HERO SECTION
+   ========================================= */
 .hero-section {
-    /* Using a softer gradient so the dark isn't so flat */
     background: linear-gradient(135deg, var(--purple-900) 0%, var(--purple-800) 100%);
     padding: 12rem 5% 6rem;
     display: flex;
@@ -224,7 +237,6 @@ h3 {
     padding: 2rem;
     color: white;
     box-shadow: 0 20px 40px -10px rgba(42, 38, 78, 0.4);
-    /* Softer shadow */
     transform: rotate(-2deg);
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
@@ -250,7 +262,9 @@ h3 {
     letter-spacing: 1px;
 }
 
-/* Stats */
+/* =========================================
+   STATS SECTION
+   ========================================= */
 .stats-section {
     display: flex;
     justify-content: center;
@@ -268,7 +282,6 @@ h3 {
 
 .stat-item h2 span {
     color: var(--purple-400);
-    /* Softened from the bright primary color */
 }
 
 .stat-item p {
@@ -286,7 +299,9 @@ h3 {
     background: var(--border-light);
 }
 
-/* Split Feature */
+/* =========================================
+   FEATURES (SPLIT & GRID)
+   ========================================= */
 .split-feature {
     display: flex;
     padding: 6rem 10%;
@@ -330,6 +345,9 @@ h3 {
     flex: 1;
     position: relative;
     height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .graphic-card {
@@ -337,10 +355,25 @@ h3 {
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 10px 25px -5px rgba(42, 38, 78, 0.05);
-    /* Very faint, soft shadow */
     border: 1px solid var(--border-light);
     font-weight: 600;
     position: absolute;
+}
+
+.graphic-card.large-card {
+    width: 500px;
+    max-width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    /* Overrides absolute if used inside standard flow */
+}
+
+.graphic-card.large-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
 }
 
 .float-1 {
@@ -360,21 +393,10 @@ h3 {
     border: none;
 }
 
-/* Features Grid */
 .features-grid-section {
     padding: 6rem 10%;
     background: var(--bg-white);
     text-align: center;
-}
-
-.section-header p {
-    color: var(--text-light);
-    margin-top: 1rem;
-    margin-bottom: 4rem;
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .grid-container {
@@ -412,7 +434,293 @@ h3 {
     line-height: 1.6;
 }
 
-/* Testimonial */
+/* =========================================
+   FEATURES BENTO GRID (Light Mode applied)
+   ========================================= */
+.features-bento-section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #0f172a;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #1e1b4b;
+}
+
+.section-header p {
+    color: #64748b;
+    margin: 1rem auto 4rem auto;
+    font-size: 1.1rem;
+    max-width: 600px;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, minmax(320px, auto));
+    gap: 1.5rem;
+}
+
+.glass-panel {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    border-radius: 32px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+}
+
+.glass-panel:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(109, 40, 217, 0.15);
+    border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.wide-card {
+    grid-column: span 2;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tall-card {
+    grid-row: span 2;
+}
+
+.card-content {
+    flex: 1;
+    z-index: 2;
+}
+
+.card-content h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.insight-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.glass-tag {
+    background: rgba(167, 139, 250, 0.1);
+    color: #6d28d9;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* =========================================
+   BENTO VISUALS & CSS ILLUSTRATIONS
+   ========================================= */
+.card-visual {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex: 1;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.image-placeholder {
+    background: linear-gradient(135deg, #f3e8ff 0%, #e0e7ff 100%);
+    border: 2px dashed #a78bfa;
+    border-radius: 20px;
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6d28d9;
+    margin-top: 1.5rem;
+}
+
+.wide-card .image-placeholder {
+    height: 220px;
+    width: 280px;
+    margin-top: 0;
+    margin-left: 2rem;
+}
+
+.tall-card .tall-placeholder {
+    height: 400px;
+}
+
+/* 1. Bar Chart (Expenses) */
+.css-bar-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    height: 140px;
+    width: 100%;
+    justify-content: center;
+}
+
+.css-bar-chart .bar {
+    width: 40px;
+    height: 100%;
+    background: #f1f5f9;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.css-bar-chart .fill {
+    width: 100%;
+    background: #c4b5fd;
+    border-radius: 8px 8px 0 0;
+    transition: height 0.5s ease;
+}
+
+.css-bar-chart .fill.highlight {
+    background: #6d28d9;
+}
+
+/* 2. Candlesticks (Market) */
+.css-candlesticks {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    height: 180px;
+}
+
+.candle {
+    position: relative;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.candle .wick {
+    position: absolute;
+    width: 2px;
+    height: 120px;
+    background: #94a3b8;
+}
+
+.candle .body {
+    position: relative;
+    width: 100%;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.candle.up .body {
+    height: 60px;
+    background: #10b981;
+    transform: translateY(-20px);
+}
+
+.candle.down .body {
+    height: 40px;
+    background: #ef4444;
+    transform: translateY(20px);
+}
+
+.candle.tall .body {
+    height: 90px;
+    transform: translateY(-30px);
+}
+
+/* 3. Chat Bubbles (Expert) */
+.css-chat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+}
+
+.bubble {
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+    max-width: 85%;
+    line-height: 1.4;
+}
+
+.bubble.left {
+    background: #f1f5f9;
+    color: #475569;
+    border-radius: 16px 16px 16px 4px;
+    align-self: flex-start;
+}
+
+.bubble.right {
+    background: #6d28d9;
+    color: white;
+    border-radius: 16px 16px 4px 16px;
+    align-self: flex-end;
+}
+
+/* 4. Progress Ring (Savings) */
+.css-progress-ring {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(#6d28d9 75%, #f1f5f9 75%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.css-progress-ring .inner-circle {
+    width: 96px;
+    height: 96px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.inner-circle span {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.inner-circle small {
+    font-size: 0.7rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+/* =========================================
+   TESTIMONIALS & BOTTOM CTA
+   ========================================= */
 .testimonial-section {
     display: flex;
     padding: 6rem 10%;
@@ -479,7 +787,6 @@ h3 {
     border-color: var(--purple-400);
 }
 
-/* Bottom CTA */
 .bottom-cta {
     padding: 6rem 10%;
     background: var(--bg-white);
@@ -516,12 +823,13 @@ h3 {
     background: var(--bg-offwhite);
 }
 
-/* Footer */
+/* =========================================
+   FOOTER
+   ========================================= */
 .home-footer {
     display: flex;
     padding: 5rem 10%;
     background: var(--purple-900);
-    /* Slightly softer than the previous stark footer */
     color: white;
     gap: 5rem;
 }
@@ -536,7 +844,6 @@ h3 {
 
 .footer-brand p {
     color: #cbd5e1;
-    /* Lighter slate for better contrast on dark bg */
     margin: 1.5rem 0;
     max-width: 300px;
     font-size: 0.9rem;
@@ -589,7 +896,9 @@ h3 {
     color: var(--purple-400);
 }
 
-/* Responsive adjustments */
+/* =========================================
+   MEDIA QUERIES (Grouped for efficiency)
+   ========================================= */
 @media (max-width: 1024px) {
 
     .hero-section,
@@ -613,49 +922,30 @@ h3 {
     }
 }
 
-.nav-links {
-    display: flex;
-    gap: 2.5rem;
-    /* Adjust spacing between links */
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-}
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
 
-.nav-links li a {
-    color: rgba(255, 255, 255, 0.7);
-    /* Slightly dimmed default state */
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
-    position: relative;
-    padding-bottom: 6px;
-    transition: color 0.3s ease;
-}
+    .wide-card,
+    .tall-card {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
 
-/* Brighten text on hover */
-.nav-links li a:hover {
-    color: #ffffff;
-}
+    .wide-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-/* The invisible underline */
-.nav-links li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    background-color: #ffffff;
-    /* Match your white text */
-    transition: all 0.3s ease-in-out;
-    transform: translateX(-50%);
-    border-radius: 2px;
-}
+    .wide-card .image-placeholder {
+        margin-left: 0;
+        margin-top: 2rem;
+        width: 100%;
+    }
 
-/* Animate the underline to full width on hover */
-.nav-links li a:hover::after {
-    width: 100%;
+    .css-bar-chart {
+        margin-top: 2rem;
+    }
 }

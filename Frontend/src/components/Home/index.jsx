@@ -33,8 +33,8 @@ const Home = () => {
             {/* Hero Section */}
             <header className="hero-section">
                 <div className="hero-content">
-                    <h1>Take Control of Your Money—and Make It Grow</h1>
-                    <p>Track every expense, navigate market trends, consult with top financial experts, and build your savings—all in one unified platform.</p>
+                    <h1 className="hero-title">Take Control of Your Money and Make It Grow</h1>
+                    <p className="hero-subtitle">Track spending, understand markets, and grow your wealth—all in one place.</p>
                     <div className="hero-actions">
                         <button className="btn-primary">Start For Free <span>→</span></button>
                     </div>
@@ -102,49 +102,90 @@ const Home = () => {
                 <div className="feature-graphics">
                     {/* Placeholder for Market/Expense UI cards */}
                     <div className="graphic-card small-card float-1">Monthly Expenses: $2,150</div>
-                    <div className="graphic-card large-card float-2">Market Trend Chart Graphic Here</div>
+                    <div className="graphic-card large-card float-2">
+                        <img src="https://res.cloudinary.com/dgmmilmk5/image/upload/v1776415375/Fin-Hub_Expense_tracker_s7cyzq.png" alt="" />
+                    </div>
                 </div>
             </section>
 
             {/* Features Grid - Updated to match the 4 sections */}
-            <section className="features-grid-section">
+            <section className="features-bento-section">
                 <div className="section-header">
                     <h2>Everything You Need to Build Wealth</h2>
                     <p>From day-to-day budgeting to long-term investing, we have you covered.</p>
                 </div>
-                <div className="grid-container four-col-grid">
-                    <div className="grid-card feature-card-1">
-                        <h3>Expenses</h3>
-                        <p>Gain complete visibility into your spending habits with AI-driven analytics and custom budget limits.</p>
-                        <div className="insight-blocks">
-                            <div className="block">Food: $450</div>
-                            <div className="block">Rent: $1,200</div>
+
+                <div className="bento-grid">
+                    {/* Card 1: Expenses */}
+                    <div className="bento-card wide-card glass-panel">
+                        <div className="card-content">
+                            <h3>Expenses</h3>
+                            <p>Gain complete visibility into your spending habits with AI-driven analytics.</p>
+                            <div className="insight-tags">
+                                <span className="glass-tag">🍔 Food: $450</span>
+                                <span className="glass-tag">🏠 Rent: $1,200</span>
+                            </div>
+                        </div>
+                        <div className="card-visual">
+                            {/* CSS Bar Chart Illustration */}
+                            <div className="css-bar-chart">
+                                <div className="bar"><div className="fill" style={{ height: '40%' }}></div></div>
+                                <div className="bar"><div className="fill highlight" style={{ height: '85%' }}></div></div>
+                                <div className="bar"><div className="fill" style={{ height: '60%' }}></div></div>
+                                <div className="bar"><div className="fill" style={{ height: '30%' }}></div></div>
+                            </div>
                         </div>
                     </div>
-                    <div className="grid-card feature-card-2">
-                        <h3>Market</h3>
-                        <p>Stay ahead with real-time market data. Analyze trends and discover high-yield investment opportunities.</p>
-                        <div className="chart-illustration">
-                            {/* Placeholder for candlestick chart */}
+
+                    {/* Card 2: Market */}
+                    <div className="bento-card tall-card glass-panel">
+                        <div className="card-content">
+                            <h3>Market</h3>
+                            <p>Analyze trends and discover high-yield opportunities in real-time.</p>
+                        </div>
+                        <div className="card-visual">
+                            {/* CSS Candlestick Illustration */}
+                            <div className="css-candlesticks">
+                                <div className="candle up"><div className="wick"></div><div className="body"></div></div>
+                                <div className="candle down"><div className="wick"></div><div className="body"></div></div>
+                                <div className="candle up tall"><div className="wick"></div><div className="body"></div></div>
+                            </div>
                         </div>
                     </div>
-                    <div className="grid-card feature-card-3">
-                        <h3>Expert Advice</h3>
-                        <p>Connect 1-on-1 with certified financial advisors to tailor a strategy specifically for your goals.</p>
-                        <div className="chat-illustration">
-                            {/* Placeholder for chat bubbles */}
+
+                    {/* Card 3: Expert Advice */}
+                    <div className="bento-card square-card glass-panel">
+                        <div className="card-content">
+                            <h3>Expert Advice</h3>
+                            <p>Connect 1-on-1 with certified advisors for tailored strategies.</p>
+                        </div>
+                        <div className="card-visual">
+                            {/* CSS Chat Bubbles Illustration */}
+                            <div className="css-chat">
+                                <div className="bubble left">Hello! How can I optimize my portfolio?</div>
+                                <div className="bubble right">Let's look at your risk profile.</div>
+                            </div>
                         </div>
                     </div>
-                    <div className="grid-card feature-card-4">
-                        <h3>Savings</h3>
-                        <p>Set automated rules to grow your emergency fund and achieve your long-term financial milestones effortlessly.</p>
-                        <div className="vault-illustration">
-                            {/* Placeholder for a vault or piggy bank */}
+
+                    {/* Card 4: Savings */}
+                    <div className="bento-card square-card glass-panel">
+                        <div className="card-content">
+                            <h3>Savings</h3>
+                            <p>Automate your emergency fund and achieve milestones.</p>
+                        </div>
+                        <div className="card-visual">
+                            {/* CSS Vault/Progress Ring Illustration */}
+                            <div className="css-progress-ring">
+                                <div className="inner-circle">
+                                    <span>75%</span>
+                                    <small>Goal Met</small>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-
             {/* Testimonial Section */}
             <section className="testimonial-section">
                 <div className="testimonial-image">
