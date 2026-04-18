@@ -1,54 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import UserDetails from '../User-Details';
 import './index.css';
 
 const Home = () => {
     const navigate = useNavigate();
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const handleLogout = () => {
         Cookies.remove("token");
         navigate("/login");
     };
+
+    const handleDetails = () => {
+        navigate("/user-details");
+    };
     const testimonialsData = [
         {
             name: "Sarah Jenkins",
-            image: "", // Add your image URL here
-            review: "The expense tracker is a lifesaver. It automatically categorized my spending and I found $200 in subscriptions I forgot about!"
+            image: "",
+            review: "The expense tracker is a lifesaver. It automatically categorized my spending and I found $200 in subscriptions I forgot about!",
+            rating: 4
         },
         {
             name: "David Chen",
             image: "",
-            review: "Market insights are lightning fast. Would love to see a few more crypto options, but the stock data is incredibly solid."
+            review: "Market insights are lightning fast. Would love to see a few more crypto options, but the stock data is incredibly solid.",
+            rating: 5
         },
         {
             name: "Priya Sharma",
             image: "",
-            review: "Chatting 1-on-1 with a financial expert cleared up all my retirement doubts. Highly recommend to anyone feeling lost."
+            review: "Chatting 1-on-1 with a financial expert cleared up all my retirement doubts. Highly recommend to anyone feeling lost.",
+            rating: 4
         },
         {
             name: "Alex Turner",
             image: "",
-            review: "The automated savings vault built my emergency fund without me even noticing. The UI is also incredibly smooth."
+            review: "The automated savings vault built my emergency fund without me even noticing. The UI is also incredibly smooth.",
+            rating: 5
         },
         {
             name: "Marcus Ray",
             image: "",
-            review: "Great app overall. The UI is clean and feels premium, though I really wish there was a dark mode toggle!"
+            review: "Great app overall. The UI is clean and feels premium, though I really wish there was a dark mode toggle!",
+            rating: 4
         },
         {
             name: "Elena Gomez",
             image: "",
-            review: "Helped me consolidate my debts. Setting custom budget limits for weekends is exactly the feature I needed."
+            review: "Helped me consolidate my debts. Setting custom budget limits for weekends is exactly the feature I needed.",
+            rating: 4
         },
         {
             name: "Rahul Verma",
             image: "",
-            review: "The candlestick charts are good, but adding advanced technical indicators would make it perfect for day traders."
+            review: "The candlestick charts are good, but adding advanced technical indicators would make it perfect for day traders.",
+            rating: 3
         },
         {
             name: "Jessica Wong",
             image: "",
-            review: "Finally, a finance app that doesn't feel overwhelming. Beautiful design, easy to use, and no annoying hidden fees."
+            review: "Finally, a finance app that doesn't feel overwhelming. Beautiful design, easy to use, and no annoying hidden fees.",
+            rating: 5
         }
     ];
     return (
@@ -78,7 +92,20 @@ const Home = () => {
                     <h1 className="hero-title">Take Control of Your Money and Make It Grow</h1>
                     <p className="hero-subtitle">Track spending, understand markets, and grow your wealth—all in one place.</p>
                     <div className="hero-actions">
-                        <button className="btn-primary">Start For Free <span>→</span></button>
+
+                        <div>
+                            <button
+                                className="btn-primary"
+                                onClick={() => setIsModalOpen(true)}
+                            >
+                                Add Basic Details
+                            </button>
+
+                            {isModalOpen && (
+                                <UserDetails onClose={() => setIsModalOpen(false)} />
+                            )}
+
+                        </div>
                     </div>
                     <div className="trust-badge">
                         <div className="avatars">
@@ -248,7 +275,19 @@ const Home = () => {
                                 </div>
                                 <div className="user-info">
                                     <h4>{testimonial.name}</h4>
-                                    <div className="stars">★★★★★</div>
+                                    <div className="stars">
+                                        {[...Array(5)].map((_, i) => (
+                                            <span
+                                                key={i}
+                                                style={{
+                                                    color: i < (testimonial.rating || 5) ? '#fbbf24' : '#ffffff',
+                                                    textShadow: i < (testimonial.rating || 5) ? 'none' : '0 0 1px #94a3b8'
+                                                }}
+                                            >
+                                                ★
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                             <p className="review-text">"{testimonial.review}"</p>

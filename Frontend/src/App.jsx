@@ -6,7 +6,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 
 function App() {
   return (
-    <GoogleOAuthProvider clientId="976802788054-aib5ai70hs4lfgrhqmf6hngtopbmblbt.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId={import.meta.env.GOOGLE_CLIENT_ID}>
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
