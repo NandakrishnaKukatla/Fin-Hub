@@ -173,11 +173,13 @@ h3 {
    ========================================= */
 .hero-section {
     background: linear-gradient(135deg, var(--purple-900) 0%, var(--purple-800) 100%);
-    padding: 12rem 5% 6rem;
+    padding: 7rem 5% 4rem;
+    /* Reduced top padding to 7rem, bottom to 4rem */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 85vh;
+    min-height: 65vh;
+    /* Reduced to pull the content below up closer */
 }
 
 .hero-content {
@@ -195,7 +197,7 @@ h3 {
     font-size: 1.15rem;
     color: var(--purple-100);
     max-width: 520px;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     line-height: 1.6;
 }
 
@@ -203,9 +205,9 @@ h3 {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     max-width: 450px;
 }
 

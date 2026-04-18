@@ -12,9 +12,6 @@ const Home = () => {
         navigate("/login");
     };
 
-    const handleDetails = () => {
-        navigate("/user-details");
-    };
     const testimonialsData = [
         {
             name: "Sarah Jenkins",
@@ -67,29 +64,10 @@ const Home = () => {
     ];
     return (
         <div className="app-container">
-            <nav className="navbar">
-                <div className="logo">
-                    <span className="logo-icon">
-                        <img
-                            src="https://res.cloudinary.com/dox2gerhp/image/upload/v1775458814/Gemini_Generated_Image_1zrb5o1zrb5o1zrb_ocdviu.png"
-                            alt="Fin-Hub Logo"
-                            className='logo-img'
-                        />
-                    </span> Fin-Hub
-                </div>
-                <ul className="nav-links">
-                    <li><a className="nav-link" href="#expense">Expenses</a></li>
-                    <li><a className="nav-link" href="#market">Market</a></li>
-                    <li><a className="nav-link" href="#expert-advice">Expert Advice</a></li>
-                    <li><a className="nav-link" href="#savings">Savings</a></li>
-                </ul>
-                <button className="btn-primary" onClick={handleLogout}>Logout</button>
-            </nav>
-
             {/* Hero Section */}
             <header className="hero-section">
                 <div className="hero-content">
-                    <h1 className="hero-title">Take Control of Your Money and Make It Grow</h1>
+                    <h1 className="hero-title">Wealth management at your fingertips</h1>
                     <p className="hero-subtitle">Track spending, understand markets, and grow your wealth—all in one place.</p>
                     <div className="hero-actions">
 
