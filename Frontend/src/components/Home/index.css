@@ -949,3 +949,107 @@ h3 {
         margin-top: 2rem;
     }
 }
+
+/* Container sizing - No more 100vh! */
+.scrolling-testimonials-section {
+    padding: 4rem 2rem;
+    max-width: 100vw;
+    /* Take full width for the scroll track */
+    overflow: hidden;
+    background-color: #f8fafc;
+    /* Very subtle off-white to separate it from the bento grid */
+}
+
+/* The scrolling track */
+.testimonials-track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem 2rem 3rem 2rem;
+    /* Extra bottom padding for shadow breathing room */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    /* Hide scrollbar for a cleaner app feel */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.testimonials-track::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+}
+
+/* Individual Card Styling */
+.testimonial-card {
+    min-width: 320px;
+    max-width: 320px;
+    scroll-snap-align: center;
+    /* Snaps cards into view as you scroll */
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px -10px rgba(109, 40, 217, 0.1);
+    /* Subtle purple glow */
+}
+
+/* Header inside the card (Avatar + Name) */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.avatar-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.avatar-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-info h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.user-info .stars {
+    color: #fbbf24;
+    /* Golden yellow */
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+    letter-spacing: 2px;
+}
+
+/* The actual review text */
+.review-text {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+}

@@ -9,6 +9,48 @@ const Home = () => {
         Cookies.remove("token");
         navigate("/login");
     };
+    const testimonialsData = [
+        {
+            name: "Sarah Jenkins",
+            image: "", // Add your image URL here
+            review: "The expense tracker is a lifesaver. It automatically categorized my spending and I found $200 in subscriptions I forgot about!"
+        },
+        {
+            name: "David Chen",
+            image: "",
+            review: "Market insights are lightning fast. Would love to see a few more crypto options, but the stock data is incredibly solid."
+        },
+        {
+            name: "Priya Sharma",
+            image: "",
+            review: "Chatting 1-on-1 with a financial expert cleared up all my retirement doubts. Highly recommend to anyone feeling lost."
+        },
+        {
+            name: "Alex Turner",
+            image: "",
+            review: "The automated savings vault built my emergency fund without me even noticing. The UI is also incredibly smooth."
+        },
+        {
+            name: "Marcus Ray",
+            image: "",
+            review: "Great app overall. The UI is clean and feels premium, though I really wish there was a dark mode toggle!"
+        },
+        {
+            name: "Elena Gomez",
+            image: "",
+            review: "Helped me consolidate my debts. Setting custom budget limits for weekends is exactly the feature I needed."
+        },
+        {
+            name: "Rahul Verma",
+            image: "",
+            review: "The candlestick charts are good, but adding advanced technical indicators would make it perfect for day traders."
+        },
+        {
+            name: "Jessica Wong",
+            image: "",
+            review: "Finally, a finance app that doesn't feel overwhelming. Beautiful design, easy to use, and no annoying hidden fees."
+        }
+    ];
     return (
         <div className="app-container">
             <nav className="navbar">
@@ -187,19 +229,31 @@ const Home = () => {
                 </div>
             </section>
             {/* Testimonial Section */}
-            <section className="testimonial-section">
-                <div className="testimonial-image">
-                    <div className="person-placeholder"></div>
+            <section className="scrolling-testimonials-section">
+                <div className="section-header text-center">
+                    <h2>Trusted by 16M+ Users</h2>
+                    <p>See how people are taking control of their wealth with Fin-Hub.</p>
                 </div>
-                <div className="testimonial-content">
-                    <h2>Join 16M+ Users Taking Control of Their Wealth</h2>
-                    <div className="review-box">
-                        <p>"The expert advice feature completely changed how I invest in the market, while the expense tracker keeps my daily budget in check."</p>
-                        <h4>Charlotte Anna</h4>
-                        <div className="nav-arrows">
-                            <span>←</span> <span className="active">→</span>
+
+                <div className="testimonials-track">
+                    {testimonialsData.map((testimonial, index) => (
+                        <div className="testimonial-card glass-panel" key={index}>
+                            <div className="card-header">
+                                <div className="avatar-circle">
+                                    {testimonial.image ? (
+                                        <img src={testimonial.image} alt={testimonial.name} />
+                                    ) : (
+                                        <span className="initial">{testimonial.name.charAt(0)}</span>
+                                    )}
+                                </div>
+                                <div className="user-info">
+                                    <h4>{testimonial.name}</h4>
+                                    <div className="stars">★★★★★</div>
+                                </div>
+                            </div>
+                            <p className="review-text">"{testimonial.review}"</p>
                         </div>
-                    </div>
+                    ))}
                 </div>
             </section>
 
