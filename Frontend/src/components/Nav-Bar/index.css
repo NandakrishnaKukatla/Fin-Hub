@@ -1,0 +1,31 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(51, 51, 102);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+    padding: 0.5rem 2rem;
+}
+
+.logo-img {
+    transition: all 0.3s ease-in-out;
+    max-height: 65px;
+    max-width: 65px;
+}
+
+.navbar.scrolled .logo-img {
+    max-height: 25px;
+    max-width: 25px;
+}

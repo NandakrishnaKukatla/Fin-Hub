@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'; // Added hooks here
 import { Link, useNavigate } from 'react-router-dom';
 import Cookies from "js-cookie";
 import './index.css';
 
 const Navbar = () => {
     const navigate = useNavigate();
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     const handleLogout = () => {
         Cookies.remove("token");
@@ -12,7 +29,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="navbar" style={{ position: 'sticky', background: '#2a264e' }}>
+        <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
             <div className="logo">
                 <span className="logo-icon">
                     <img

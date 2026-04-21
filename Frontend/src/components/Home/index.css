@@ -28,7 +28,8 @@ body {
 }
 
 .app-container {
-    overflow-x: hidden;
+    overflow-x: clip;
+    /* Fixes position: sticky for children while hiding horizontal scrollbar */
 }
 
 /* =========================================

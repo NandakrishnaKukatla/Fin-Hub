@@ -3,6 +3,7 @@ import Login from "./components/Login/index.jsx";
 import Home from "./components/Home/index.jsx";
 import SignUp from "./components/SignUp/index.jsx";
 import Layout from "./components/Nav-Bar/Layout.jsx";
+import Expenses from "./components/Expenses/index.jsx";
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/expenses" element={<Expenses />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
