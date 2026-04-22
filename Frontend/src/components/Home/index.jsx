@@ -63,7 +63,7 @@ const Home = () => {
         }
     ];
     return (
-        <div className="app-container">
+        <div className="home-container">
             {/* Hero Section */}
             <header className="hero-section">
                 <div className="hero-content">
@@ -162,7 +162,7 @@ const Home = () => {
                     <p>From day-to-day budgeting to long-term investing, we have you covered.</p>
                 </div>
 
-                <div className="bento-grid">
+                <div className="home-bento-grid">
                     {/* Card 1: Expenses */}
                     <div className="bento-card wide-card glass-panel">
                         <div className="card-content">

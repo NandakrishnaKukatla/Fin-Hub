@@ -1,192 +1,3 @@
-/* Full screen centering with a subtle gradient background */
-.onboarding-wrapper {
-    min-height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #f4f4f9 0%, #e0e7ff 100%);
-    padding: 2rem;
-    box-sizing: border-box;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-}
-
-/* The Premium Card */
-.onboarding-card {
-    background: #ffffff;
-    max-width: 600px;
-    width: 100%;
-    border-radius: 24px;
-    padding: 3rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-}
-
-.step-indicator {
-    display: inline-block;
-    background: #f1f5f9;
-    color: #64748b;
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-
-.onboarding-header {
-    margin-bottom: 2.5rem;
-}
-
-.onboarding-header h2 {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #0f172a;
-    margin: 0 0 0.5rem 0;
-}
-
-.onboarding-header p {
-    color: #64748b;
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* Form Layout */
-.onboarding-form .form-group {
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-}
-
-.onboarding-form label {
-    font-weight: 700;
-    color: #1e293b;
-    margin-bottom: 0.5rem;
-    font-size: 1.05rem;
-}
-
-.onboarding-form .subtitle {
-    font-size: 0.85rem;
-    color: #94a3b8;
-    margin-bottom: 0.8rem;
-}
-
-.mt-2 {
-    margin-top: 0.5rem;
-}
-
-/* Premium Select Dropdown */
-.custom-select-wrapper {
-    position: relative;
-    width: 100%;
-}
-
-.premium-input {
-    width: 100%;
-    padding: 1.2rem 1.5rem;
-    font-size: 1rem;
-    color: #0f172a;
-    background-color: #f8fafc;
-    border: 2px solid #e2e8f0;
-    border-radius: 16px;
-    outline: none;
-    cursor: pointer;
-    appearance: none;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.premium-input:focus {
-    border-color: #6d28d9;
-    background-color: #ffffff;
-    box-shadow: 0 0 0 4px rgba(109, 40, 217, 0.1);
-}
-
-/* Pills / Buttons */
-.pill-group {
-    display: flex;
-    gap: 0.8rem;
-}
-
-.pill-group.wrap {
-    flex-wrap: wrap;
-}
-
-.choice-pill {
-    background-color: #f8fafc;
-    color: #475569;
-    border: 2px solid #e2e8f0;
-    padding: 0.8rem 1.5rem;
-    border-radius: 12px;
-    /* Slight square look like modern apps */
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    flex: 1;
-    /* Makes the risk tolerance pills equal width */
-    text-align: center;
-}
-
-.pill-group.wrap .choice-pill {
-    flex: none;
-    /* Let interests pills size to text */
-}
-
-.choice-pill:hover {
-    background-color: #f1f5f9;
-    border-color: #cbd5e1;
-}
-
-.choice-pill.active {
-    background-color: #6d28d9;
-    color: #ffffff;
-    border-color: #6d28d9;
-    box-shadow: 0 4px 15px rgba(109, 40, 217, 0.3);
-}
-
-/* Submit Button */
-.btn-continue {
-    width: 100%;
-    padding: 1.2rem;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: white;
-    background: #0f172a;
-    /* Dark sleek button */
-    border: none;
-    border-radius: 16px;
-    cursor: pointer;
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.btn-continue:hover {
-    background: #1e293b;
-    transform: translateY(-2px);
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 600px) {
-    .onboarding-card {
-        padding: 2rem 1.5rem;
-    }
-
-    .pill-group {
-        flex-direction: column;
-    }
-
-    .pill-group.wrap {
-        flex-direction: row;
-    }
-}
-
 /* Dark blurred background overlay */
 .modal-overlay {
     position: fixed;
@@ -195,14 +6,11 @@
     width: 100vw;
     height: 100vh;
     background: rgba(15, 23, 42, 0.6);
-    /* Dark slate overlay */
     backdrop-filter: blur(8px);
-    /* The Glassmorphism blur effect */
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    /* Ensures it sits on top of EVERYTHING */
     padding: 1rem;
     box-sizing: border-box;
 }
@@ -217,23 +25,16 @@
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     box-sizing: border-box;
     position: relative;
-    /* Pop-in animation */
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 @keyframes popIn {
-    0% {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
-/* Close Button (The 'X') */
+/* Close Button */
 .close-btn {
     position: absolute;
     top: 1.5rem;
@@ -256,28 +57,36 @@
     background: #e2e8f0;
     color: #0f172a;
     transform: rotate(90deg);
-    /* Cool little rotation effect */
 }
 
-/* --- Keep the rest of your form styling EXACTLY the same below this --- */
-
+/* Header */
 .onboarding-header {
+    text-align: center;
     margin-bottom: 2rem;
-    margin-top: 1rem;
+    padding: 0 1rem;
+    animation: fadeUp 0.5s ease forwards;
 }
 
 .onboarding-header h2 {
-    font-size: 1.8rem;
-    font-weight: 800;
+    font-size: 1.75rem;
+    font-weight: 700;
     color: #0f172a;
     margin: 0 0 0.5rem 0;
+    letter-spacing: -0.5px;
 }
 
-.onboarding-header p {
-    color: #64748b;
+.onboarding-para {
     font-size: 0.95rem;
+    color: #3b639c;
+    font-weight: 400;
     line-height: 1.5;
-    margin: 0;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Form Layout */
@@ -300,16 +109,9 @@
     margin-bottom: 0.8rem;
 }
 
-.mt-2 {
-    margin-top: 0.5rem;
-}
+.mt-2 { margin-top: 0.5rem; }
 
-/* Premium Select Dropdown */
-.custom-select-wrapper {
-    position: relative;
-    width: 100%;
-}
-
+/* Premium Input base styles used by the custom dropdown trigger too */
 .premium-input {
     width: 100%;
     padding: 1rem 1.2rem;
@@ -330,15 +132,89 @@
     box-shadow: 0 0 0 4px rgba(109, 40, 217, 0.1);
 }
 
+/* Custom Dropdown Container */
+.custom-dropdown-container {
+    position: relative;
+    width: 100%;
+}
+
+.custom-dropdown-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    background-image: none !important;
+}
+
+.custom-dropdown-trigger.open {
+    border-color: #6d28d9;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(109, 40, 217, 0.1);
+}
+
+.placeholder-text { color: #64748b; }
+.selected-text { color: #0f172a; font-weight: 600; }
+
+.dropdown-arrow { transition: transform 0.3s ease; }
+.dropdown-arrow.rotate { transform: rotate(180deg); }
+
+.custom-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.custom-dropdown-item {
+    padding: 1rem 1.2rem;
+    font-size: 0.95rem;
+    color: #475569;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom-dropdown-item:hover {
+    background-color: #f8fafc;
+    color: #0f172a;
+}
+
+.custom-dropdown-item.active-item {
+    background-color: #f3e8ff;
+    color: #6d28d9;
+    font-weight: 600;
+}
+
+.check-mark {
+    font-weight: bold;
+    color: #6d28d9;
+}
+
 /* Pills / Buttons */
 .pill-group {
     display: flex;
     gap: 0.6rem;
 }
 
-.pill-group.wrap {
-    flex-wrap: wrap;
-}
+.pill-group.wrap { flex-wrap: wrap; }
 
 .choice-pill {
     background-color: #f8fafc;
@@ -354,9 +230,7 @@
     text-align: center;
 }
 
-.pill-group.wrap .choice-pill {
-    flex: none;
-}
+.pill-group.wrap .choice-pill { flex: none; }
 
 .choice-pill:hover {
     background-color: #f1f5f9;
@@ -378,7 +252,6 @@
     font-weight: 700;
     color: white;
     background: #6d28d9;
-    /* Changed to purple to match active states */
     border: none;
     border-radius: 12px;
     cursor: pointer;
@@ -398,158 +271,7 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
-    .modal-card {
-        padding: 2rem 1.5rem;
-    }
-
-    .pill-group {
-        flex-direction: column;
-    }
-
-    .pill-group.wrap {
-        flex-direction: row;
-    }
-}
-
-
-.onboarding-header {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 0 1rem;
-}
-
-.onboarding-header {
-    font-size: 1.75rem;
-    /* ~28px */
-    font-weight: 700;
-    color: #0f172a;
-    /* dark navy */
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.5px;
-}
-
-.onboarding-para {
-    font-size: 0.95rem;
-    /* ~15px */
-    color: #3b639c;
-    /* soft gray */
-    font-weight: 400;
-    line-height: 1.5;
-    max-width: 320px;
-    margin: 0 auto;
-}
-
-
-.onboarding-header {
-    animation: fadeUp 0.5s ease forwards;
-}
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* Custom Dropdown Container */
-.custom-dropdown-container {
-    position: relative;
-    width: 100%;
-}
-
-/* The Trigger (looks like your old select input) */
-.custom-dropdown-trigger {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    user-select: none;
-    /* Keeps your existing premium-input styles but removes the default background arrow */
-    background-image: none !important;
-}
-
-.custom-dropdown-trigger.open {
-    border-color: #6d28d9;
-    background-color: #ffffff;
-    box-shadow: 0 0 0 4px rgba(109, 40, 217, 0.1);
-}
-
-.placeholder-text {
-    color: #64748b;
-}
-
-.selected-text {
-    color: #0f172a;
-    font-weight: 600;
-}
-
-/* Animated Arrow */
-.dropdown-arrow {
-    transition: transform 0.3s ease;
-}
-
-.dropdown-arrow.rotate {
-    transform: rotate(180deg);
-}
-
-/* The Floating Menu */
-.custom-dropdown-menu {
-    position: absolute;
-    top: calc(100% + 8px);
-    /* Sits just below the input */
-    left: 0;
-    width: 100%;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-    overflow: hidden;
-
-    /* Animation defaults (Hidden state) */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Show state for the menu */
-.custom-dropdown-menu.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* Individual List Items */
-.custom-dropdown-item {
-    padding: 1rem 1.2rem;
-    font-size: 0.95rem;
-    color: #475569;
-    cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.custom-dropdown-item:hover {
-    background-color: #f8fafc;
-    color: #0f172a;
-}
-
-.custom-dropdown-item.active-item {
-    background-color: #f3e8ff;
-    /* Soft purple */
-    color: #6d28d9;
-    font-weight: 600;
-}
-
-.check-mark {
-    font-weight: bold;
-    color: #6d28d9;
+    .modal-card { padding: 2rem 1.5rem; }
+    .pill-group { flex-direction: column; }
+    .pill-group.wrap { flex-direction: row; }
 }

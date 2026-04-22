@@ -1,9 +1,16 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, Outlet } from "react-router-dom";
 import Login from "./components/Login/index.jsx";
 import Home from "./components/Home/index.jsx";
 import SignUp from "./components/SignUp/index.jsx";
-import Layout from "./components/Nav-Bar/Layout.jsx";
+import Navbar from "./components/Nav-Bar/index.jsx";
 import Expenses from "./components/Expenses/index.jsx";
+
+const Layout = () => (
+  <>
+    <Navbar />
+    <Outlet />
+  </>
+);
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 function App() {
