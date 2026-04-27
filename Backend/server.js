@@ -16,7 +16,7 @@ app.use(express.json());
 
 // --- DATABASE CONNECTION ---
 // Make sure MONGO_URI is set in your .env file
-mongoose.connect("mongodb+srv://nandukukatla_db_user:rq4YDd4rSi37IEwu@userdb.xtpjk12.mongodb.net/?appName=Userdb")
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('✅ Connected to MongoDB'))
     .catch((err) => console.error('❌ MongoDB connection error:', err));
 

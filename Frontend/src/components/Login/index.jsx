@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { useGoogleLogin } from "@react-oauth/google";
 
-const Base_url = "https://fin-hub.onrender.com";
+const baseUrl = (import.meta.env.VITE_API_BASE_URL || "https://fin-hub.onrender.com").replace(/\/$/, "");
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -24,7 +24,7 @@ const Login = () => {
 
     const handleGoogleLogin = async (credentialResponse) => {
         try {
-            const response = await fetch(`${Base_url}/api/auth/google`, {
+            const response = await fetch(`${baseUrl}/api/auth/google`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ token: credentialResponse.access_token }),
@@ -60,7 +60,7 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch(`${Base_url}/api/auth/login`, {
+            const response = await fetch(`${baseUrl}/api/auth/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password }),

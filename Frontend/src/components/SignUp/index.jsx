@@ -2,9 +2,6 @@ import { useState } from 'react';
 import './index.css';
 import { useNavigate } from 'react-router-dom';
 
-
-const Base_url = "https://fin-hub.onrender.com";
-
 const SignUp = () => {
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
@@ -23,7 +20,7 @@ const SignUp = () => {
         }
 
         try {
-            const response = await fetch(`${Base_url}/api/auth/register`, {
+            const response = await fetch("https://fin-hub.onrender.com/api/auth/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name: fullName, email, password }),
