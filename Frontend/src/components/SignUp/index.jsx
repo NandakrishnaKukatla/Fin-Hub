@@ -3,7 +3,7 @@ import './index.css';
 import { useNavigate } from 'react-router-dom';
 
 
-const Base_url = "https://fin-hub.onrender.com";
+const baseUrl = (import.meta.env.VITE_API_BASE_URL || "https://fin-hub.onrender.com").replace(/\/$/, "");
 
 const SignUp = () => {
     const [fullName, setFullName] = useState('');
@@ -23,7 +23,7 @@ const SignUp = () => {
         }
 
         try {
-            const response = await fetch(`${Base_url}/api/auth/register`, {
+            const response = await fetch(`${baseUrl}/api/auth/register`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name: fullName, email, password }),
