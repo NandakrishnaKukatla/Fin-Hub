@@ -4,7 +4,6 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const fetch = require('node-fetch');
 
 const app = express();
 
@@ -168,7 +167,7 @@ app.post('/api/auth/google', async (req, res) => {
 
     } catch (error) {
         console.error("Google auth error:", error);
-        res.status(401).json({ success: false, message: "Google auth failed" });
+        res.status(401).json({ success: false, message: "Google auth failed: " + (error.message || error) });
     }
 });
 
