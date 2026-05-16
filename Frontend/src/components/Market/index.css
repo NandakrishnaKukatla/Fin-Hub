@@ -1,0 +1,170 @@
+/* Market Dashboard Container */
+.market-container {
+    padding: 8rem 5% 5rem;
+    /* Padding top to account for the absolute navbar */
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.market-header {
+    margin-bottom: 3rem;
+}
+
+.market-header h1 {
+    font-size: 2.5rem;
+    color: var(--purple-900);
+    margin-bottom: 0.5rem;
+}
+
+.market-header p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* Dashboard Layout */
+.dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Main Ticker Card */
+.main-ticker-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(42, 38, 78, 0.03);
+}
+
+.ticker-info h2 {
+    font-size: 2rem;
+    color: var(--purple-900);
+    margin-bottom: 0.25rem;
+}
+
+.company-name {
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.ticker-price-wrapper {
+    text-align: right;
+}
+
+.current-price {
+    font-size: 3rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.price-change {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+}
+
+/* Market Colors (Soft Financial Colors) */
+.price-change.positive {
+    background-color: #ecfdf5;
+    color: #059669;
+    /* Soft Emerald Green */
+}
+
+.price-change.negative {
+    background-color: #fef2f2;
+    color: #dc2626;
+    /* Soft Rose Red */
+}
+
+.change-icon {
+    font-size: 0.9rem;
+}
+
+/* Secondary Metrics Grid */
+.metrics-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.metric-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 2px 8px rgba(42, 38, 78, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(42, 38, 78, 0.05);
+}
+
+.metric-label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.metric-value {
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Loading & Error States */
+.loading-state,
+.error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0;
+    color: var(--text-light);
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-light);
+    border-top-color: var(--purple-600);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-ticker-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .ticker-price-wrapper {
+        text-align: left;
+    }
+}

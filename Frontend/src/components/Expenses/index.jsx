@@ -7,51 +7,6 @@ const Expenses = () => {
 
 
             <div className="expenses-container">
-                {/* Sidebar */}
-                {/* <aside className="sidebar">
-                    <div className="sidebar-brand">
-                        <div className="brand-icon">
-                            <span className="material-symbols-outlined icon-filled">
-                                account_balance
-                            </span>
-                        </div>
-                        <div className="brand-text">
-                            <h2>Capital Alpha</h2>
-                            <p>Wealth Management</p>
-                        </div>
-                    </div>
-
-                    <div className="sidebar-menu">
-                        <a className="sidebar-item active" href="#">
-                            <span className="material-symbols-outlined">dashboard</span>
-                            <span>Overview</span>
-                        </a>
-                        <a className="sidebar-item" href="#">
-                            <span className="material-symbols-outlined">account_balance_wallet</span>
-                            <span>Ledger</span>
-                        </a>
-                        <a className="sidebar-item" href="#">
-                            <span className="material-symbols-outlined">insights</span>
-                            <span>Analytics</span>
-                        </a>
-                        <a className="sidebar-item" href="#">
-                            <span className="material-symbols-outlined">payments</span>
-                            <span>Budget</span>
-                        </a>
-                        <a className="sidebar-item" href="#">
-                            <span className="material-symbols-outlined">settings</span>
-                            <span>Settings</span>
-                        </a>
-                    </div>
-
-                    <div className="sidebar-footer">
-                        <button className="btn-new-entry">
-                            <span className="material-symbols-outlined">add</span>
-                            New Entry
-                        </button>
-                    </div>
-                </aside> */}
-
                 {/* Main Content */}
                 <main className="main-content">
                     <header className="header-section">
