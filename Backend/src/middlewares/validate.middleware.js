@@ -1,10 +1,7 @@
 import { validationResult } from 'express-validator';
 import ApiError from '../utils/ApiError.js';
 
-/**
- * Middleware to intercept express-validator results.
- * If validation fails, throws an ApiError with status 400.
- */
+
 const validate = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {

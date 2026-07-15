@@ -16,7 +16,6 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      // not required because users might register via Google OAuth
     },
     picture: {
       type: String,
@@ -27,7 +26,6 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-// Strip out the password hash and standard database version field before sending the JSON response
 const transformUser = (doc, ret) => {
   delete ret.password;
   delete ret.__v;

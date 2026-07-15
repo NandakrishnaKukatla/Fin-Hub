@@ -57,8 +57,8 @@ export const googleLogin = asyncHandler(async (req, res) => {
   res.status(200).json({
     success: true,
     message: 'Google login successful',
-    token: result.token, // Backward compatibility for frontend
-    user: result.user,   // Backward compatibility for frontend
+    token: result.token,
+    user: result.user,
     data: {
       token: result.token,
       user: result.user,
