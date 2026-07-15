@@ -1,4 +1,4 @@
-require('dotenv').config(); // MUST BE AT THE TOP to load .env variables
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -19,7 +19,9 @@ mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('✅ Connected to MongoDB'))
     .catch((err) => console.error('❌ MongoDB connection error:', err));
 
-// --- SCHEMA & MODEL ---
+
+
+
 const userSchema = new mongoose.Schema({
     name: { type: String, required: true },
     email: { type: String, unique: true, required: true },
@@ -75,7 +77,7 @@ app.post('/api/auth/login', async (req, res) => {
         const user = await User.findOne({ email });
 
         if (!user) {
-            return res.status(400).json({ success: false, message: "User not found" });
+            return res.status(400).jMson({ success: false, message: "User not found" });
         }
 
         if (!user.password) {
